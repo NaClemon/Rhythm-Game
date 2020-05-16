@@ -1,0 +1,304 @@
+#main{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    visibility: visible;
+}
+#main h1{
+    position: absolute;
+	top: 18%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    font-family: "Arial";
+    font-size: 40px;
+    color: rgb(255, 204, 0);
+    text-shadow: 2px 2px rgb(204, 163, 0);
+    animation: 1s title_anim;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+#main button{
+    position: absolute;
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 20px;
+    border: 0px;
+    border-radius: 12px;
+    width: 120px;
+    height: 40px;
+    background-color: rgb(255, 204, 0);
+    color: white;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#main button:hover{
+    cursor: pointer;
+}
+@keyframes title_anim{
+    from {font-size: 30px;}
+    to {font-size: 40px;}
+}
+#musicchoice{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    left: calc(50% - 512px);
+    text-align: center;
+    visibility: hidden;
+    width: 1024px;
+    height: 576px;
+}
+#musicchoice::before{
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("choicebackground.jpg");
+    background-size: cover;
+    opacity: 0.7;
+}
+#musicchoice h1{
+    font-size: 50px;
+    color: rgb(51, 51, 51);
+    font-style: italic;
+    font-family: "Courier New";
+}
+#musicchoice img{
+    width: 90px;
+    height: 90px;
+    position: relative;
+    top: calc(33% - 45px);
+}
+#musicchoice img:nth-child(4){
+    float: left;
+}
+#musicchoice img:last-child{
+    float: right;
+}
+#musicchoice img:hover{
+    cursor: pointer;
+}
+#mus1{
+    position: absolute;
+    background-image: url('album.jpg');
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    border: none;
+    transform: translate3d(-120px, 70px, 0px);
+}
+#mus1:hover{
+    cursor: pointer;
+}
+#mus2{
+    position: absolute;
+    background-image: url('album.jpg');
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    border: none;
+    transform: translate3d(100px, 70px, 0px) scale3d(0.7, 0.7, 0.7);
+}
+#mus2:hover{
+    cursor: pointer;
+}
+#game{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    left: calc(50% - 512px);
+    text-align: center;
+    visibility: hidden;
+}
+#game::before{
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    background-image: url("gameback.jpg");
+    background-size: cover;
+    opacity: 0.6;
+    filter: blur(10px);
+}
+#mycanvas{
+    border: none;
+}
+#keyinput{
+    display: block;
+}
+#nowcombo{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 35px;
+	background: linear-gradient(to bottom right, #ffff33, #ff3300);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    opacity: 1.0;
+    z-index: -10;
+}
+#nowjudge{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 27px;
+}
+#judgeline{
+    position: absolute;
+    width: 1024px;
+    height: 10px;
+    top: 485;
+    background-color: #8c8c8c;
+    opacity: 0.8;
+    z-index: -10;
+}
+#note1{
+    position: absolute;
+    border: 1px solid black;
+    width: 135px;
+    height: 16px;
+    border-radius: 20px;
+    background: radial-gradient(#ff9900 20%, #ffff1a, #ffffcc 80%);
+    top: -10%;
+    left: 212px;
+}
+#line1{
+    position: absolute;
+    width: 135px;
+    height: 521px;
+    top: 0;
+    left: 213px;
+    background-color: #808080;
+    opacity: 0.3;
+    z-index: -20;
+}
+#note2{
+    position: absolute;
+    border: 1px solid black;
+    width: 135px;
+    height: 16px;
+    border-radius: 20px;
+    background: radial-gradient(#ff9900 20%, #ffff1a, #ffffcc 80%);
+    top: -10%;
+    left: 367px;
+}
+#line2{
+    position: absolute;
+    width: 135px;
+    height: 521px;
+    top: 0;
+    left: 368px;
+    background-color: #808080;
+    opacity: 0.3;
+    z-index: -20;
+}
+#note3{
+    position: absolute;
+    border: 1px solid black;
+    width: 135px;
+    height: 16px;
+    border-radius: 20px;
+    background: radial-gradient(#ff9900 20%, #ffff1a, #ffffcc 80%);
+    top: -10%;
+    left: 522px;
+}
+#line3{
+    position: absolute;
+    width: 135px;
+    height: 521px;
+    top: 0;
+    left: 523px;
+    background-color: #808080;
+    opacity: 0.3;
+    z-index: -20;
+}
+#note4{
+    position: absolute;
+    border: 1px solid black;
+    width: 135px;
+    height: 16px;
+    border-radius: 20px;
+    background: radial-gradient(#ff9900 20%, #ffff1a, #ffffcc 80%);
+    top: -10%;
+    left: 677px;
+}
+#line4{
+    position: absolute;
+    width: 135px;
+    height: 521px;
+    top: 0;
+    left: 678px;
+    background-color: #808080;
+    opacity: 0.3;
+    z-index: -20;
+}
+#result{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    left: calc(50% - 512px);
+    text-align: center;
+    width: 1024px;
+    height: 576px;
+    background-color: #404040;
+    color: white;
+    visibility: hidden;
+}
+#result h3:nth-child(3){
+	background: linear-gradient(to bottom right, #ffff33, #ff3300);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+#result h3:nth-child(4){
+	background: linear-gradient(to bottom right, #e6e6ff, #0000e6);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+#result h3:nth-child(5){
+	background: linear-gradient(to bottom right, #ccffcc, #006600);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+#result h3:nth-child(6){
+	background: linear-gradient(to bottom right, #ffcccc, #e60000);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+#result h3:nth-child(7){
+	background: linear-gradient(to bottom right, #d9d9d9, #333333);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+#result button{
+    position: absolute;
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 20px;
+    border: 0px;
+    border-radius: 12px;
+    width: 120px;
+    height: 40px;
+    background-color: rgb(255, 204, 0);
+    color: white;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#result button:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>My Game</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        <div id="main">
+            <h1 id="anim">Welcome to My Game!!</h1>
+            <button onclick="start()">Start</button>
+        </div>
+        <div id="musicchoice">
+            <h1>Music</h1>
+            <button id="mus1" onclick="startgame(1)"></button>
+            <button id="mus2" onclick="startgame(2)" disabled></button>
+            <img src="left-arrow.png" onclick="nextsong()">
+            <img src="right-arrow.png" onclick="previoussong()">
+        </div>
+        <div id="game">
+            <canvas id="mycanvas" width="1024" height="576"></canvas>
+            <h1 id="nowcombo"></h1>
+            <h1 id="nowjudge"></h1>
+            <div id="judgeline"></div>
+            <div id="note1"></div>
+            <div id="line1"></div>
+            <div id="note2"></div>
+            <div id="line2"></div>
+            <div id="note3"></div>
+            <div id="line3"></div>
+            <div id="note4"></div>
+            <div id="line4"></div>
+        </div>
+        <div id="result">
+            <h1>Score: </h1><hr>
+            <h3>Combo: </h3>
+            <h3>Perfect: </h3>
+            <h3>Good: </h3>
+            <h3>Bad: </h3>
+            <h3>Miss: </h3><hr>
+            <h1>Rank: </h1>
+            <button id="out" onclick="gomain()">Check</button>
+        </div>
+        
+        <script type="text/javascript" src="script.js"></script>
+        <script src="note.js"></script>
+    </body>
+</html>
