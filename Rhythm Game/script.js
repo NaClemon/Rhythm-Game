@@ -26,6 +26,100 @@ var noteV = 3;
 var noteY = 0;
 var noteloc = Math.floor(Math.random() * 4);
 
+// youtube music
+var youtube_player;
+function onYouTubeIframeAPIReady() {
+    youtube_player = new YT.Player('utumusic', {
+        height: '90',
+        width: '120',
+        videoId: 'F64yFFnZfkI',
+        events: {
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlaterState.PLAYING) {
+        setTimeout(loopVideo, 20000);
+    }
+}
+
+function loopVideo() {
+    youtube_player.stopVideo();
+    youtube_player.playVideo();
+}
+
+// Music class
+function Music() {
+    this.album_art;
+    this.song_id;
+    
+    this.setMusic = function(album_art, song_id) {
+        this.album_art = album_art;
+        this.song_id = song_id;
+    }
+    
+    this.goLeft = function(leftMusic, rightMusic, plusMusic) {
+        var pos = 0;
+        var scalepos = 0;
+        
+        var id = setInterval(frame, 5);
+        function frame() {
+            if (pos == 220)
+                clearInterval(id);
+            else {
+                pos += 4;
+                scalepos += 0.0054;
+                
+                // center music goes left
+                this.album_art.style.transform = "translate3d(" + (-120 - pos) + "px, 95px, 0px) scale3d(" + (1 - scalepos) + ", " +(1 - scalepos) + ", " + (1 - scalepos) + ")";
+                
+                // right music goes center
+                rightMusic.album_art.style.transform = "translate3d(" + (100 - pos) + "px, 95px, 0px) scale3d(" + (0.7 + scalepos) + ", " +(0.7 + scalepos) + ", " + (0.7 + scalepos) + ")";
+                
+                // pop up plus music
+                
+                // hidden left music
+            }
+        }
+    }
+    
+    this.goRight = function(leftMusic, rightMusic, plusMusic) {
+        var pos = 0;
+        var scalepos = 0;
+        
+        var id = setInterval(frame, 5);
+        function frame() {
+            if (pos == 220)
+                clearInterval(id);
+            else {
+                pos += 4;
+                scalepos += 0.0054;
+                
+                // center music goes right
+                this.album_art.style.transform = "translate3d(" + (-120 - pos) + "px, 95px, 0px) scale3d(" + (1 - scalepos) + ", " +(1 - scalepos) + ", " + (1 - scalepos) + ")";
+                
+                // left music goes center
+                rightMusic.album_art.style.transform = "translate3d(" + (-340 - pos) + "px, 95px, 0px) scale3d(" + (0.7 + scalepos) + ", " +(0.7 + scalepos) + ", " + (0.7 + scalepos) + ")";
+                
+                // pop up plus music
+                
+                // hidden right music
+            }
+        }
+    }
+    
+    this.changeMusic = function(centerMusic) {
+        youtube_player.stopVideo();
+        youtube_player.loadVideoById(this.song_id);
+        youtube_player.playVideo();
+        
+        this.album_art.disabled = false;
+        this.album_art.disabled = true;
+    }
+}
+
 function start(){
     if(choosescreen.style.visibility === "hidden"){
         mainscreen.style.visibility = "hidden";
@@ -61,8 +155,8 @@ function nextsong(){
             else{
                 pos+=4;
                 scalepos += 0.0054;
-                mus1.style.transform = "translate3d(" + (-120-pos) + "px, 70px, 0px) scale3d(" + (1-scalepos) + ", " +(1-scalepos) + ", " + (1-scalepos) + ")";
-                mus2.style.transform = "translate3d(" + (100-pos) + "px, 70px, 0px) scale3d(" + (0.7+scalepos) + ", " +(0.7+scalepos) + ", " + (0.7+scalepos) + ")";
+                mus1.style.transform = "translate3d(" + (-120-pos) + "px, 95px, 0px) scale3d(" + (1-scalepos) + ", " +(1-scalepos) + ", " + (1-scalepos) + ")";
+                mus2.style.transform = "translate3d(" + (100-pos) + "px, 95px, 0px) scale3d(" + (0.7+scalepos) + ", " +(0.7+scalepos) + ", " + (0.7+scalepos) + ")";
             }
         }
         mus2.disabled = false;
@@ -95,8 +189,8 @@ function previoussong(){
             else{
                 pos+=4;
                 scalepos += 0.0054;
-                mus2.style.transform = "translate3d(" + (-120+pos) + "px, 70px, 0px) scale3d(" + (1-scalepos) + ", " +(1-scalepos) + ", " + (1-scalepos) + ")";
-                mus1.style.transform = "translate3d(" + (-340+pos) + "px, 70px, 0px) scale3d(" + (0.7+scalepos) + ", " +(0.7+scalepos) + ", " + (0.7+scalepos) + ")";
+                mus2.style.transform = "translate3d(" + (-120+pos) + "px, 95px, 0px) scale3d(" + (1-scalepos) + ", " +(1-scalepos) + ", " + (1-scalepos) + ")";
+                mus1.style.transform = "translate3d(" + (-340+pos) + "px, 95px, 0px) scale3d(" + (0.7+scalepos) + ", " +(0.7+scalepos) + ", " + (0.7+scalepos) + ")";
             }
         }
         mus2.disabled = true;

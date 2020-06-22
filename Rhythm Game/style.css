@@ -85,26 +85,29 @@
 }
 #mus1{
     position: absolute;
-    background-image: url('album.jpg');
+    background-image: url('https://img.youtube.com/vi/F64yFFnZfkI/0.jpg');
     background-size: contain;
+    background-repeat: no-repeat;
     width: 200px;
-    height: 200px;
+    height: 150px;
     margin: 20px;
     border: none;
-    transform: translate3d(-120px, 70px, 0px);
+    transform: translate3d(-120px, 95px, 0px);
 }
 #mus1:hover{
     cursor: pointer;
 }
 #mus2{
     position: absolute;
-    background-image: url('album.jpg');
+/*    background-image: url('album.jpg');*/
+    background-image: url('https://img.youtube.com/vi/t7MBzMP4OzY/0.jpg');
     background-size: contain;
+    background-repeat: no-repeat;
     width: 200px;
-    height: 200px;
+    height: 150px;
     margin: 20px;
     border: none;
-    transform: translate3d(100px, 70px, 0px) scale3d(0.7, 0.7, 0.7);
+    transform: translate3d(100px, 95px, 0px) scale3d(0.7, 0.7, 0.7);
 }
 #mus2:hover{
     cursor: pointer;
